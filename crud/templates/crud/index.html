@@ -1,0 +1,46 @@
+{% extends 'crud/basic.html' %}
+{% block body %}
+<div class="container">
+<h3>Addmission List:</h3>
+<a href="/create" class="btn btn-secondary">Add record</a>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">sr no.</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Password</th>
+      <th scope="col">phone</th>
+      <th scope="col">class</th>
+      <th scope="col">stream</th>
+      <th scope="col">fees</th>
+      <th scope="col">pending fees</th>
+      <th scope="col">Date of birth</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for add in adlist %}
+    <tr>
+    	<td>{{forloop.counter}}</td>
+      <td>{{add.name}}</td>
+      <td>{{add.email}}</td>
+      <td>{{add.password}}</td>
+      <td>{{add.phone}}</td>
+      <td>{{add.wclass}}</td>
+      <td>{{add.stream}}</td>
+      <td>{{add.fees}}</td>
+      <td>{{add.pending_fees}}</td>
+      <td>{{add.dob}}</td>
+      <td>
+        <a href="/edit/{{add.am_id}}" class="btn btn-info my-2">Edit</a>
+        <a href="/delete/{{add.am_id}}" class="btn btn-danger">delete</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+
+{% endblock %}

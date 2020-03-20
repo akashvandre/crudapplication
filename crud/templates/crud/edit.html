@@ -1,0 +1,54 @@
+{% extends 'crud/basic.html' %}
+
+{% block body %}
+<div class="container">
+	<h3>Addmition Create:</h3>
+	<form action="/update/{{adlist.am_id}}" method="post">
+    {% csrf_token %}
+  <div class="form-group">
+    <label for="name">Enter Name</label>
+    <input type="text" class="form-control" id="name" name="name" value="{{adlist.name}}" aria-describedby="emailHelp" placeholder="Enter your name">
+  </div>  
+  <div class="form-group">
+    <label for="email">Enter email</label>
+    <input type="email" class="form-control" id="email" name="email" value="{{adlist.email}}" aria-describedby="emailHelp" placeholder="Enter your email">
+  </div> 
+   <div class="form-group">
+    <label for="password">Enter password</label>
+    <input type="password" class="form-control" id="password" name="password" value="{{adlist.password}}" aria-describedby="emailHelp" placeholder="Enter your password">
+  </div> 
+   <div class="form-group">
+    <label for="phone">Enter phone number</label>
+    <input type="tel" class="form-control" id="phone" name="phone" value="{{adlist.phone}}" aria-describedby="emailHelp" placeholder="Enter your phone number">
+  </div> 
+   <div class="form-group">
+    <label for="wclass">Enter class</label>
+    <input type="text" class="form-control" id="wclass" name="wclass" value="{{adlist.wclass}}" aria-describedby="emailHelp" placeholder="Enter your class name">
+  </div> 
+   <div class="form-group">
+    <label for="stream">Enter stream</label>
+    <input type="text" class="form-control" id="stream" name="stream" value="{{adlist.stream}}" aria-describedby="emailHelp" placeholder="Enter your stream">
+  </div> 
+   <div class="form-group">
+    <label for="fees">Enter paid fees</label>
+    <input type="number" class="form-control" id="fees" name="fees" value="{{adlist.fees}}" aria-describedby="emailHelp" placeholder="Enter your fees">
+  </div> 
+   <div class="form-group">
+    <label for="pending_fees">Enter pending fees</label>
+    <input type="number" class="form-control" id="pending_fees" name="pending_fees" value="{{adlist.pending_fees}}" aria-describedby="emailHelp" placeholder="Enter your pending fees">
+  </div> 
+   <div class="form-group">
+    <label for="dob">Enter your Date of birth</label>
+    <input type="Date" class="form-control" id="dob" name="dob" value="{{adlist.dob}}" aria-describedby="emailHelp" placeholder="Enter your date of birth">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+</div>
+
+
+
+
+{% endblock %}
